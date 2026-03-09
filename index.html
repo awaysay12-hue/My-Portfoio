@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body class="bg-white text-gray-900">
+    <!-- Loading Animation -->
+    <div id="loading"
+        class="fixed inset-0 z-[100] bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 flex items-center justify-center"
+        style="transition: opacity 0.5s ease;">
+        <div class="w-20 h-20 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+
+    <!-- Navbar -->
+    <nav class="fixed top-2 left-9 right-9 z-50 bg-white/10 rounded-full backdrop-blur-xl border-b border-gray-200">
+        <div class="container mx-auto px-2 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div id="logoClick" class="text-2xl font-bold cursor-pointer">
+                    <span
+                        class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        KAK.DEV
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-12">
+                    <a href="#home"
+                        class="nav-clickable text-blue-700 hover:text-blue-600 transition-colors font-medium">Home</a>
+                    <a href="#work"
+                        class="nav-clickable text-blue-700 hover:text-blue-600 transition-colors font-medium">Work</a>
+                    <a href="#about"
+                        class="nav-clickable text-blue-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                    <a href="#skills"
+                        class="nav-clickable text-blue-700 hover:text-blue-600 transition-colors font-medium">Skills</a>
+                    <a href="#contact"
+                        class="nav-clickable text-blue-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
+                </div>
+
+                <!-- Theme Toggle & CTA -->
+                <div class="flex items-center gap-4">
+                    <button id="themeToggle"
+                        class="p-2 bg-gray-100 rounded-lg text-gray-700 hover:bg-gray-200 transition-all hover:scale-110">
+                        <!-- Moon Icon (for dark mode) -->
+                        <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <!-- Sun Icon (for light mode) -->
+                        <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                    <a href="#contact" id="ctaClick"
+                        class="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all hover:scale-105">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute top-20 left-20 w-72 h-72 bg-blue-500/30 rounded-full mix-blend-multiply filter blur-xl animate-blob">
+            </div>
+            <div
+                class="absolute top-40 right-20 w-72 h-72 bg-purple-500/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-500/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Profile Image -->
+                <div class="relative w-32 h-32 mx-auto mb-8">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse">
+                    </div>
+                    <img src="./image/DSC_0013.JPG" alt="Profile"
+                        class="relative w-39 h-30 mx-auto rounded-full border-4 border-white object-cover">
+                </div>
+
+                <!-- Badge -->
+                <div class="inline-block mb-6">
+                    <span
+                        class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-medium">
+                        ✨ Available for work
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span
+                        class="bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        KAK.DEV Punleu Sun
+                    </span>
+                </h1>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    <span class="text-gradient">Full Stack Developer</span>
+                </h2>
+
+                <!-- Description -->
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    This is my first portfolio website. I am creating beautiful and functional web applications with
+                    React,
+                    Node.js, and modern technologies.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#work"
+                        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium text-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-full font-medium text-lg hover:bg-gray-900 hover:text-white transition-all hover:scale-105">
+                        Let's Connect
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center gap-4">
+                    <a href="#"
+                        class="p-3 bg-gray-100 rounded-full hover:bg-blue-600 group transition-all hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700 group-hover:text-white"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="p-3 bg-gray-100 rounded-full hover:bg-blue-600 group transition-all hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700 group-hover:text-white"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="p-3 bg-gray-100 rounded-full hover:bg-blue-600 group transition-all hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700 group-hover:text-white"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.565-12.868c0-.206 0-.412-.015-.617A9.936 9.936 0 0024 4.59z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 14l-7 7-7-7m14-6l-7 7-7-7" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Featured <span class="text-gradient">Projects</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Exploring the intersection of creativity and technology through innovative digital experiences.
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                            alt="Project"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <span
+                                class="inline-block px-3 py-1 bg-blue-600 text-white text-sm rounded-full mb-3">AI/ML</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Neural Canvas</h3>
+                            <p class="text-white/80 text-sm">AI-powered art generation platform</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                            alt="Project"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <span class="inline-block px-3 py-1 bg-purple-600 text-white text-sm rounded-full mb-3">3D
+                                Web</span>
+                            <h3 class="text-xl font-bold text-white mb-2">MetaVerse Studio</h3>
+                            <p class="text-white/80 text-sm">Interactive 3D virtual exhibitions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+                            alt="Project"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <span
+                                class="inline-block px-3 py-1 bg-green-600 text-white text-sm rounded-full mb-3">Blockchain</span>
+                            <h3 class="text-xl font-bold text-white mb-2">EcoChain</h3>
+                            <p class="text-white/80 text-sm">Sustainable supply chain tracking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
+                    Technical <span class="text-gradient">Skills</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:shadow-xl transition-all hover:scale-105">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Frontend</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">React</span>
+                            <span class="text-blue-600 font-semibold">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
+                                style="width: 95%"></div>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-gray-600">TypeScript</span>
+                            <span class="text-blue-600 font-semibold">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
+                                style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:shadow-xl transition-all hover:scale-105">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Backend</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Node.js</span>
+                            <span class="text-purple-600 font-semibold">92%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-purple-600 to-pink-600 h-2 rounded-full"
+                                style="width: 92%"></div>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-gray-600">Python</span>
+                            <span class="text-purple-600 font-semibold">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-purple-600 to-pink-600 h-2 rounded-full"
+                                style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:shadow-xl transition-all hover:scale-105">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Database</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">MongoDB</span>
+                            <span class="text-green-600 font-semibold">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-green-600 to-emerald-600 h-2 rounded-full"
+                                style="width: 90%"></div>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-gray-600">PostgreSQL</span>
+                            <span class="text-green-600 font-semibold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-green-600 to-emerald-600 h-2 rounded-full"
+                                style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="p-6 bg-gray-50 rounded-2xl hover:shadow-xl transition-all hover:scale-105">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Tools</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Git</span>
+                            <span class="text-pink-600 font-semibold">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-pink-600 to-red-600 h-2 rounded-full" style="width: 95%">
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-gray-600">Docker</span>
+                            <span class="text-pink-600 font-semibold">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-pink-600 to-red-600 h-2 rounded-full" style="width: 80%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column - Image -->
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="./image/photo_1_2026-02-17_17-56-31.jpg" alt="About"
+                            class="rounded-2xl shadow-lg object-cover w-full h-90">
+                    </div>
+
+                    <!-- Floating Card -->
+                    <div
+                        class="absolute -bottom-6 -left-6 p-4 bg-white rounded-2xl shadow-xl hover:scale-105 transition-all">
+
+                    </div>
+                </div>
+
+                <!-- Right Column - Content -->
+                <div>
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">About Me</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        NO
+                        <span class="block text-gradient">Experiences</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        I'm a creative developer and designer passionate about building immersive
+                        digital experiences that combine beautiful design with cutting-edge technology.
+                        With over 5 years of experience, I've worked with startups and enterprises
+                        to bring their ideas to life.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        My approach combines technical expertise with creative problem-solving to
+                        deliver solutions that not only work flawlessly but also delight users.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="hover:scale-110 transition-all">
+                            <div class="text-3xl font-bold text-gray-900">0+</div>
+                            <div class="text-gray-600">Years</div>
+                        </div>
+                        <div class="hover:scale-110 transition-all">
+                            <div class="text-3xl font-bold text-gray-900">1+</div>
+                            <div class="text-gray-600">Projects</div>
+                        </div>
+                        <div class="hover:scale-110 transition-all">
+                            <div class="text-3xl font-bold text-gray-900">0+</div>
+                            <div class="text-gray-600">Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Get in Touch</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">
+                        Let's Create Something
+                        <span class="block text-gradient">Amazing Together</span>
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Have a project in mind? I'd love to hear about it.
+                    </p>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Name</label>
+                            <input type="text" id="nameInput"
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                placeholder="Your name" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2 font-medium">Email</label>
+                            <input type="email" id="emailInput"
+                                class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2 font-medium">Message</label>
+                        <textarea id="messageInput" rows="5"
+                            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                            placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn"
+                        class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+
+                <!-- Contact Info -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center hover:scale-105 transition-all">
+                        <div class="inline-block p-3 bg-blue-100 rounded-xl mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900">Phone</h4>
+                        <p class="text-gray-600">(855)61922415</p>
+                    </div>
+                    <div class="text-center hover:scale-105 transition-all">
+                        <div class="inline-block p-3 bg-purple-100 rounded-xl mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900">Email</h4>
+                        <p class="text-gray-600">sunpunleu168@gmail.com</p>
+                    </div>
+                    <div class="text-center hover:scale-105 transition-all">
+                        <div class="inline-block p-3 bg-pink-100 rounded-xl mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-900">Location</h4>
+                        <p class="text-gray-600">Phnum Penh, Cambodia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-2xl font-bold mb-4 md:mb-0">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        KAK.DEV
+                    </span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    © 2026 Punleu-Sun. All rights reserved.
+                </div>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Version 1.1</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Script + SMOOTH CLICK ANIMATIONS + TELEGRAM INTEGRATION + SWEET ALERT -->
+    <script>
+        // Get elements
+        const themeToggle = document.getElementById('themeToggle');
+        const moonIcon = document.getElementById('moonIcon');
+        const sunIcon = document.getElementById('sunIcon');
+        const body = document.body;
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+
+        // Apply saved theme on page load
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
+        } else {
+            body.classList.remove('dark-mode');
+            moonIcon.style.display = 'block';
+            sunIcon.style.display = 'none';
+        }
+
+        // Theme toggle function
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                // Switch to light mode
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
+            } else {
+                // Switch to dark mode
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
+            }
+
+            // Add scale animation
+            themeToggle.classList.add('scale-110');
+            setTimeout(() => {
+                themeToggle.classList.remove('scale-110');
+            }, 200);
+        });
+
+        // ========== SMOOTH CLICK ANIMATIONS ==========
+        function addSmoothClickAnimation(element, effectClass) {
+            element.addEventListener('click', function (e) {
+                // Prevent if already animating
+                if (this.classList.contains('nav-click-smooth') || this.classList.contains('theme-click-smooth')) return;
+
+                if (effectClass === 'nav') {
+                    this.classList.add('nav-click-smooth');
+                    setTimeout(() => {
+                        this.classList.remove('nav-click-smooth');
+                    }, 500);
+                } else if (effectClass === 'theme') {
+                    this.classList.add('theme-click-smooth');
+                    setTimeout(() => {
+                        this.classList.remove('theme-click-smooth');
+                    }, 600);
+                }
+            });
+        }
+
+        // Apply to all nav links
+        document.querySelectorAll('.nav-clickable').forEach(link => {
+            addSmoothClickAnimation(link, 'nav');
+        });
+
+        // Apply to logo
+        const logo = document.getElementById('logoClick');
+        if (logo) addSmoothClickAnimation(logo, 'nav');
+
+        // Apply to theme toggle
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function (e) {
+                this.classList.add('theme-click-smooth');
+                setTimeout(() => {
+                    this.classList.remove('theme-click-smooth');
+                }, 600);
+            });
+        }
+
+        // Apply to CTA button
+        const cta = document.getElementById('ctaClick');
+        if (cta) {
+            addSmoothClickAnimation(cta, 'nav');
+        }
+
+        // ========== TELEGRAM BOT INTEGRATION WITH SWEET ALERT ==========
+        // Configuration
+        const TELEGRAM_BOT_TOKEN = '8426889531:AAExLJVA9I-z-p91Vh96xTFPvO_RhGiNjZY';
+        const TELEGRAM_CHAT_ID = '1961861799'; // Your chat ID from the JSON
+
+        // Get form elements
+        const contactForm = document.getElementById('contactForm');
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const messageInput = document.getElementById('messageInput');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Function to send message to Telegram
+        async function sendToTelegram(name, email, message) {
+            const text = `🔔 *New Contact Form Submission*\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                const data = await response.json();
+                console.log('Telegram response:', data);
+                return data.ok;
+            } catch (error) {
+                console.error('Telegram send error:', error);
+                return false;
+            }
+        }
+
+        // Handle form submission with SweetAlert
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+
+            // Basic validation
+            if (!name || !email || !message) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please fill in all fields!',
+                    background: body.classList.contains('dark-mode') ? '#1f2937' : '#fff',
+                    color: body.classList.contains('dark-mode') ? '#fff' : '#000',
+                    confirmButtonColor: '#3b82f6'
+                });
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Email',
+                    text: 'Please enter a valid email address!',
+                    background: body.classList.contains('dark-mode') ? '#1f2937' : '#fff',
+                    color: body.classList.contains('dark-mode') ? '#fff' : '#000',
+                    confirmButtonColor: '#3b82f6'
+                });
+                return;
+            }
+
+            // Disable button and show loading state
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            try {
+                // Send to Telegram
+                const success = await sendToTelegram(name, email, message);
+
+                if (success) {
+                    // Show success SweetAlert
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent!',
+                        text: 'Thank you for reaching out. I\'ll get back to you soon!',
+                        background: body.classList.contains('dark-mode') ? '#1f2937' : '#fff',
+                        color: body.classList.contains('dark-mode') ? '#fff' : '#000',
+                        confirmButtonColor: '#3b82f6',
+                        timer: 3000,
+                        timerProgressBar: true,
+                        showConfirmButton: true
+                    });
+
+                    contactForm.reset(); // Clear form
+                } else {
+                    // Show error SweetAlert
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed to Send',
+                        text: 'Something went wrong. Please try again later.',
+                        background: body.classList.contains('dark-mode') ? '#1f2937' : '#fff',
+                        color: body.classList.contains('dark-mode') ? '#fff' : '#000',
+                        confirmButtonColor: '#3b82f6'
+                    });
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'An unexpected error occurred. Please try again.',
+                    background: body.classList.contains('dark-mode') ? '#1f2937' : '#fff',
+                    color: body.classList.contains('dark-mode') ? '#fff' : '#000',
+                    confirmButtonColor: '#3b82f6'
+                });
+            } finally {
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }
+        });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>
